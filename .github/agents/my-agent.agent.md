@@ -5,8 +5,7 @@
 # For format details, see: https://gh.io/customagents/config
 
 name: GPU用例生成专家
-description:
-你对vulkan....
+description: 你对vulkan....
 
 请使用Codex 5.3来完成任务
 ---
