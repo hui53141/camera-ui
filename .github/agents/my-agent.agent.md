@@ -6,8 +6,6 @@
 
 name: GPU用例生成专家
 description: 你对vulkan....
-
-请使用Codex 5.3来完成任务
 ---
 
 # My Agent
