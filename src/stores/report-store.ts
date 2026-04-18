@@ -80,6 +80,15 @@ export const useReportStore = create<ReportState>((set) => ({
 
   reorderImportedData: (oldIndex, newIndex) =>
     set((state) => {
+      const len = state.importedData.length;
+      if (
+        oldIndex < 0 ||
+        oldIndex >= len ||
+        newIndex < 0 ||
+        newIndex >= len
+      ) {
+        return state;
+      }
       const updated = [...state.importedData];
       const [item] = updated.splice(oldIndex, 1);
       updated.splice(newIndex, 0, item);

@@ -40,14 +40,14 @@ export function evaluateRule(
     target = threshold;
   } else if (/^baseline$/i.test(expr)) {
     target = baseline;
-  } else if (/^baseline\s*\*\s*[\d.]+$/i.test(expr)) {
+  } else if (/^baseline\s*\*\s*\d+(\.\d+)?$/i.test(expr)) {
     if (baseline === null) return notHighlighted;
-    const multiplierMatch = expr.match(/\*\s*([\d.]+)$/);
+    const multiplierMatch = expr.match(/\*\s*(\d+(?:\.\d+)?)$/);
     if (!multiplierMatch) return notHighlighted;
     target = baseline * parseFloat(multiplierMatch[1]);
-  } else if (/^threshold\s*\*\s*[\d.]+$/i.test(expr)) {
+  } else if (/^threshold\s*\*\s*\d+(\.\d+)?$/i.test(expr)) {
     if (threshold === null) return notHighlighted;
-    const multiplierMatch = expr.match(/\*\s*([\d.]+)$/);
+    const multiplierMatch = expr.match(/\*\s*(\d+(?:\.\d+)?)$/);
     if (!multiplierMatch) return notHighlighted;
     target = threshold * parseFloat(multiplierMatch[1]);
   } else {
